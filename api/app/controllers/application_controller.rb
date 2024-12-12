@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
+  protect_from_forgery with: :null_session
+
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+
+  def render_404
+    render :json => ["Record not found"], :status => 404
+  end
 end

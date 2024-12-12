@@ -1,0 +1,3 @@
+name,gender,locationX,locationY,diet_type,age
+person a,male,0,0,vegan,25
+person b,female,0,0,vegan,23
