@@ -1,9 +1,10 @@
 services:
   mariadb:
+    container_name: mariadb
     environment:
       MARIADB_USER: railsUser
       MARIADB_PASSWORD: railsPassword
-      MARIADB_DATABASE: Grazer
+      MARIADB_DATABASE: grazer-dev
       MARIADB_ROOT_PASSWORD: rootPassword
     image: mariadb:11.6
     ports:
@@ -14,7 +15,11 @@ services:
       interval: 30s
       timeout: 5s
       retries: 30
-  api:
+    volumes:
+      - ./mariadb/init:/docker-entrypoint-initdb.d
+      - mariadb-store:/var/lib/mysql
+  grazer-api:
+    container_name: grazer-api
     build:
       context: ./api
     command: /bin/sh -c "rm -rf /app/tmp/pids/server.pid && bin/setup --skip-server && bin/rails server -b 0.0.0.0 -p 3000"
@@ -25,7 +30,6 @@ services:
       APP_DATABASE_HOST: mariadb
       APP_DATABASE_USERNAME: railsUser
       APP_DATABASE_PASSWORD: railsPassword
-      APP_DATABASE_NAME: Grazer
     ports:
       - '3000:3000'
     tty: true
@@ -35,3 +39,4 @@ services:
 
 volumes:
   bundler-store:
+  mariadb-store:

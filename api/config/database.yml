@@ -1,6 +1,5 @@
 default: &default
   <<: *default
-  database: <%= ENV.fetch("APP_DATABASE_NAME", 'Grazer') %>
   adapter: mysql2
   host: <%= ENV.fetch("APP_DATABASE_HOST", 'localhost') %>
   pool: <%= ENV.fetch("APP_RAILS_MAX_THREADS") { 5 } %>
@@ -12,6 +11,12 @@ default: &default
 
 development:
   <<: *default
+  database: grazer-dev
 
 test:
   <<: *default
+  database: grazer-test
+
+production:
+  <<: *default
+  database: grazer-prod
