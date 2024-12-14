@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_12_194900) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_14_142507) do
+  create_table "preferences", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "looking_for_diet_type"
+    t.string "ages"
+    t.decimal "distance", precision: 10, scale: 5
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_preferences_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "gender"
@@ -21,4 +32,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_12_194900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "preferences", "users"
 end
