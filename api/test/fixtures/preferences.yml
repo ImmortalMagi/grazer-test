@@ -13,3 +13,11 @@ two:
   ages: MyString
   distance: 9.99
   gender: MyString
+
+three:
+  id: 10
+  user: three
+  looking_for_diet_type: Vegan
+  ages: 20-40
+  distance: 5
+  gender: Male

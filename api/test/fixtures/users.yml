@@ -17,3 +17,12 @@ two:
   locationY: 2.4
   diet_type: Vegan
   age: 28
+
+three:
+  id: 249
+  name: ForPreferences
+  gender: Male
+  locationX: 1.32
+  locationY: 2.4
+  diet_type: Vegan
+  age: 28
