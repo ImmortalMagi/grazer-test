@@ -14,8 +14,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_12_194900) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "gender"
-    t.decimal "locationX", precision: 10
-    t.decimal "locationY", precision: 10
+    t.decimal "locationX", precision: 10, scale: 5
+    t.decimal "locationY", precision: 10, scale: 5
     t.string "diet_type"
     t.integer "age"
     t.datetime "created_at", null: false

@@ -7,8 +7,11 @@ class UsersController < ApplicationController
     render :json => User.find(params[:id])
   end
 
+  def search
+    render :json => User.find_by(user_params)
+  end
+
   def create
-    #@user = User.new(name: params[:name], gender: params[:gender], locationX: params[:locationX], locationY: params[:locationY], diet_type: params[:diet_type], age: params[:age])
     @user = User.new(user_params)
     if @user.save
       render :json => @user

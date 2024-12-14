@@ -1,17 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  gender: MyString
-  locationX: 9.99
-  locationY: 9.99
-  diet_type: MyString
-  age: 1
+  id: 10
+  name: Claire
+  gender: Female
+  locationX: 2.1
+  locationY: 3
+  diet_type: Omnivore
+  age: 23
 
 two:
-  name: MyString
-  gender: MyString
-  locationX: 9.99
-  locationY: 9.99
-  diet_type: MyString
-  age: 1
+  id: 17
+  name: Steve
+  gender: Male
+  locationX: 1.32
+  locationY: 2.4
+  diet_type: Vegan
+  age: 28
