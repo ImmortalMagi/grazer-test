@@ -18,9 +18,9 @@ two:
   diet_type: Vegan
   age: 28
 
-three:
+for_preferences:
   id: 249
-  name: ForPreferences
+  name: Bob
   gender: Male
   locationX: 1.32
   locationY: 2.4

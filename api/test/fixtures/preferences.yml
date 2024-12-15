@@ -3,21 +3,24 @@
 one:
   user: one
   looking_for_diet_type: MyString
-  ages: MyString
+  lower_age: 20
+  upper_age: 30
   distance: 9.99
   gender: MyString
 
 two:
   user: two
   looking_for_diet_type: MyString
-  ages: MyString
+  lower_age: 20
+  upper_age: 30
   distance: 9.99
   gender: MyString
 
 three:
   id: 10
-  user: three
+  user_id: 249
   looking_for_diet_type: Vegan
-  ages: 20-40
+  lower_age: 20
+  upper_age: 30
   distance: 5
   gender: Male

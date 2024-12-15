@@ -30,12 +30,12 @@ class PreferencesController < ApplicationController
     @Preference = Preference.find(params[:id])
     @Preference.destroy
 
-    render :json => []
+    render :json => ["Deleted"]
   end
 
   private
     def preference_params
-      pref_params = params.expect(preference: [:user_id, :looking_for_diet_type, :ages, :distance, :gender])
+      pref_params = params.expect(preference: [:user_id, :looking_for_diet_type, :lower_age, :upper_age, :distance, :gender])
       pref_params["user"] = User.find(pref_params["user_id"])
       pref_params.delete("user_id")
       return pref_params

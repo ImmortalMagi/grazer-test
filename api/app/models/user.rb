@@ -3,5 +3,5 @@ class User < ApplicationRecord
   validates :age, numericality: { only_integer: true }
   validates :locationX, :locationY, numericality: true
 
-  has_many :preferences
+  has_one :preference
 end

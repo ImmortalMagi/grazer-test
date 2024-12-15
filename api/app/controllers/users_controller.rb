@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    render :json => []
+    render :json => ["Deleted"]
   end
 
   private

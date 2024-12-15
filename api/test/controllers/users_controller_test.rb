@@ -21,6 +21,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal 23, response_json["age"]
   end
 
+  test "should fail to find non-existent user" do
+    users_show_url = "/users/1865"
+    get users_show_url
+    assert_response :missing
+  end
+
   test "should find a user by name" do
     users_search_url = "/users/search?user[name]=Claire"
     get users_search_url

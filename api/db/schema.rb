@@ -14,7 +14,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_14_142507) do
   create_table "preferences", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "looking_for_diet_type"
-    t.string "ages"
+    t.integer "lower_age"
+    t.integer "upper_age"
     t.decimal "distance", precision: 10, scale: 5
     t.string "gender"
     t.datetime "created_at", null: false
