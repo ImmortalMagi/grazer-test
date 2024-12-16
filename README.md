@@ -1,5 +1,4 @@
 # Grazer Take Home Test
-James Murray
 
 Please see DESIGN.md for an overview of the design.
 
